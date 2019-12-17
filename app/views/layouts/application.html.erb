@@ -11,11 +11,15 @@
   </head>
  
   <body>
+  <% if user_signed_in? %>
     <nav class="navbar has-background-grey-dark has-text-white-ter">
       <div class="container">
         <div class="navbar-brand">
           <div class="navbar-item has-text-white-ter">
             <%= image_tag "logo-menu.png" %>
+          </div>
+          <div class="navbar-item has-text-white-ter has-text-weigth-bold is-size-5">
+            <%= yield :title %>
           </div>
  
           <div class="navbar-burger burger has-text-white-ter" data-show="quickview" data-target="left-sidebar">
@@ -34,7 +38,7 @@
       
       <%= render "layouts/sidebar" %> 
     </nav>
- 
+ <% end %>
     <section class="section">
       <div class="container">
         <% if alert %>
