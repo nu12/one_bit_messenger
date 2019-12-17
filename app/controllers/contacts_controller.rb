@@ -19,6 +19,13 @@ class ContactsController < ApplicationController
   end
 
   def destroy
+    @contact = current_user.contacts.find(params[:id])
+    if @contact.destroy
+      flash[:notice] = "Contact succesfully removed"
+    else
+      flash[:alert] = "An error ocurred when trying to remove thi contact"
+    end
+    redirect_to contacts_path
   end
 
   private
