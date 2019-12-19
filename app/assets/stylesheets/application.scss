@@ -6,6 +6,10 @@
 @import './chats';
 @import './messages';
 
+section.section{
+  padding-top: 100px;
+}
+
 .navbar-burger.burger.desktop-burger {
     display: block;
   }
