@@ -32,5 +32,8 @@ document.addEventListener("turbolinks:load", function() {
     }
   })
 
-  document.querySelector("div.message-container").scrollIntoView(false)
+  let doc = document.querySelector("div.message-container")
+  if (doc != null){
+	doc.scrollIntoView(false)
+  }
 })

@@ -4,7 +4,7 @@ document.querySelector("textarea[name='message[content]']").classList.remove('is
     messageContainer = document.querySelector("div.message-container")
     messageContainer.innerHTML += "<%= j render('messages/message', message: @message) %>"
     messageContainer.scrollIntoView(false)
-    document.querySelector("textarea[name='message[content]']") = ""
+    document.querySelector("textarea[name='message[content]']").innerHTML = ""
 <% else %>
     document.querySelector("textarea[name='message[content]']").classList.add('is-danger')
 <% end %>
