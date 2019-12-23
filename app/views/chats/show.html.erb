@@ -5,13 +5,14 @@
     <i class="fas fa-paw has-text-white-ter"></i>
   <% end %>
 <% end %>
+
 <%= content_for :title do %>
-    <div class="contact-header">
+    <div class="contact-header" data-user="<%= @receiver.id %>">
       <div class="name">
         <%= @receiver.name %>
       </div>
       <div class="status">
-        Online
+        <%= @receiver.is_online? ? "Online" : "Offline" %>
       </div>
     </div>
   <% end %>
