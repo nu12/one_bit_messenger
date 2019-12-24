@@ -1,24 +1,43 @@
-# README
+# OneBitMessenger
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+A messaging rails application, using ActionCable and Bulma.
 
-Things you may want to cover:
+## Deploy
 
-* Ruby version
+Run `docker-compose up` and access the application on localhost:3000 when it is ready.
 
-* System dependencies
+### The long way
 
-* Configuration
+Dependencies
 
-* Database creation
+* Rails 6.0.1
+* Bundler
+* Nodejs
+* Yarn
 
-* Database initialization
+```shell
+$ git clone https://github.com/nu12/one_bit_messenger.git
+$ cd one_bit_messenger
+$ bundle install
+$ yarn install
+$ rails webpacker:compile
+$ rails db:create
+$ rails db:migrate
+$ rails s
+```
 
-* How to run the test suite
+Access the application on localhost:3000 when it is ready.
 
-* Services (job queues, cache servers, search engines, etc.)
+## Known issues
 
-* Deployment instructions
+* User can self-add
+* User can add same contact multiple times
+* Conflict with Devise callback when deleting an user
+* Having a chat blocks user delete
 
-* ...
+## TODO
+
+* Known issues
+* Challenge: mark messages as read in real time to the sender when the receiver gets it. 
+
+Pull request are welcome.
