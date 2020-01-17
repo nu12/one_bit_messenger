@@ -10,10 +10,11 @@ class ContactsController < ApplicationController
   def create
     user = User.find_by(email: contact_params[:record][:email])
     @contact = current_user.contacts.build(record: user)
-    if @contact.save
+    if user && @contact.save
       flash[:notice] = "Contact succesfully created"
       redirect_to contacts_path
     else
+      flash[:alert] = @contact.errors.full_messages.first
       render :new
     end
   end
